@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Generated from PRIVACY.md by scripts/docs.mjs. -->
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Grammer — Privacy</title><link rel="stylesheet" href="ui.css"></head>
+<body><div class="options document">
+<header class="topbar"><div class="brand"><img src="icons/mark.svg" alt="">Grammer</div><a href="options.html">Settings</a></header>
+<main class="workspace"><h1>Grammer privacy policy</h1>
+<p>Effective September 7, 2026. Applies to version 0.2.0 of the source and packaged extension in this repository.</p>
+<h2>Text</h2>
+<p>Grammer runs when you invoke a shortcut, toolbar action, or context-menu action. It captures the selection in an accessible page or frame. To prevent stale edits, it temporarily keeps a local snapshot of the selected input's value or rich-text editor's markup. That snapshot is never sent to Google.</p>
+<p><strong>Fix grammar</strong> sends the selected text, a proofreading instruction, and your spelling preference directly to Google's Gemini API at generativelanguage.googleapis.com. The request uses Gemini 3.5 Flash-Lite and includes your Gemini API key in the x-goog-api-key header. The key is never put in the request URL. The request does not include the page URL, title, unselected surrounding text, or browsing history. <strong>Test connection</strong> sends a fixed example sentence instead of page content.</p>
+<p><strong>Remove formatting</strong> runs on your device without a network request. <strong>Copy plain text</strong> writes the result to the system clipboard only when you click it. Grammer does not read your clipboard. Your operating system or clipboard manager may retain copied text separately.</p>
+<p>Selections and results are held in memory while a preview or request is active. Closing the preview cancels the request and releases its selection snapshot. Grammer does not save or log selections, requests, results, or editing history. Browser and provider internals may retain their own network data. Cancelling a request cannot recall text already received by Google.</p>
+<h2>Google's processing</h2>
+<p>Grammer has no developer-operated backend. Grammar requests go directly to Google, which receives normal network metadata such as your IP address. Google's applicable Gemini API terms and policies govern processing and retention, including any differences between free and paid use. Requests set store to false; this is not a promise of zero retention by Google.</p>
+<p>No analytics, advertising, remote fonts, or tracking SDKs are included. There is no extension account system and no sale of user data by this extension.</p>
+<h2>Settings and keys</h2>
+<p>Spelling preferences and the model identifier are stored in chrome.storage.local. API keys use chrome.storage.session unless you enable <strong>Remember my key on this device</strong>. Session storage is cleared when Chrome restarts or the extension reloads, updates, or is disabled. Remembered keys are stored in chrome.storage.local without application-level encryption. Neither uses Chrome Sync.</p>
+<p>Both storage areas are restricted to trusted extension pages and the service worker. Keys are not passed to content scripts or placed in page markup. Credentials are tied to the fixed Gemini API base URL. Old credentials saved for a different provider are not used for Gemini. Anyone with access to your browser profile or extension DevTools may be able to inspect stored keys.</p>
+<p>Keyboard shortcut assignments are managed by Chrome. Grammer reads the current assignments to display them and opens Chrome's shortcut editor when you choose to change them.</p>
+<h2>Controls and deletion</h2>
+<p>Use <strong>Forget saved key</strong> to clear the credential from both storage areas. <strong>Reset settings</strong> clears preferences, credentials, and optional API permissions. It leaves Chrome-managed shortcut assignments unchanged. Uninstalling the extension removes its local extension storage. Deletion does not remove requests already held by Google or clipboard history held by your operating system.</p>
+<p>Chrome asks for access to generativelanguage.googleapis.com when you connect Gemini. Host permissions cover that hostname's paths and ports. Page access otherwise starts with an explicit action through activeTab; Grammer does not automatically scan pages.</p>
+<h2>Questions</h2>
+<p>Open a non-sensitive issue in the source repository where you obtained this release. For security concerns, follow <a href="help.html#security">the security reporting guidance</a>. Include only public examples, never API keys or private documents.</p></main>
+<footer class="page-footer"><span>Grammer · MIT licensed</span><a href="help.html">How to use</a></footer>
+</div></body>
+</html>

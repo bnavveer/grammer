@@ -1,0 +1,26 @@
+name: Bug report
+description: Report an editing, connection, or interface problem.
+body:
+  - type: markdown
+    attributes:
+      value: "Use public sample text. Do not include API keys or personal documents. For vulnerabilities, read SECURITY.md."
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include what you expected and the action you used.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Add a short public sample and say whether copying the result worked.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Chrome version, operating system, and editor
+    validations:
+      required: true

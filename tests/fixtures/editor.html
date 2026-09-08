@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Grammer editing playground</title>
+<style>
+  *{box-sizing:border-box}body{max-width:920px;margin:55px auto;padding:0 28px 60px;font:16px/1.6 "Avenir Next","Segoe UI",sans-serif;color:#132a4a;background:#f5f7fc}h1{font-size:38px;letter-spacing:-1.5px;line-height:1.2}p{max-width:650px;color:#586b86}h2{font-size:18px;margin:26px 0 8px}textarea,input,[contenteditable]{font:inherit;padding:18px;border:1px solid #cbd6e5;border-radius:9px;background:#fff;width:100%;color:#132a4a}textarea{min-height:125px}[contenteditable]{min-height:105px}label{display:block;font-weight:600;font-size:13px;margin:24px 0 7px}.inline-style{color:#ce3652;background:#fff0b8;font:italic 22px Georgia,serif}.chip{font-size:12px;border:1px solid #cbd6e5;border-radius:20px;padding:5px 10px}kbd{border:1px solid #cbd6e5;padding:2px 5px;border-radius:4px;font:inherit}button{padding:9px 14px}a{color:#2452db}
+</style></head>
+<body>
+<span class="chip">Grammer playground</span>
+<h1>A small place to try Grammer.</h1>
+<p>Select a passage below, then use <kbd>Alt + Shift + G</kbd> for grammar or <kbd>Alt + Shift + P</kbd> for plain text. On Mac, Alt is Option. You can also use Grammer's toolbar or right-click menu.</p>
+<label for="draft">A rough draft</label>
+<textarea id="draft">Yesterday we was talking about the new project. Their is a few things we needs to fix before its ready.</textarea>
+<h2>A little too much formatting</h2>
+<div id="rich" contenteditable="true" role="textbox" aria-label="Rich text editor">Keep this. <span style="color: rgb(206, 54, 82); background-color: rgb(255, 240, 184); font-family: Georgia; font-size: 22px"><b>These words is very colorful.</b></span> <a href="https://example.com">A link to keep as words.</a> Keep that.</div>
+<h2>Formatting from a website's CSS</h2>
+<div id="class-rich" contenteditable="true" role="textbox" aria-label="CSS styled editor">Before <span class="inline-style">colorful words</span> after.</div>
+<h2>More than one paragraph</h2>
+<div id="paragraphs" contenteditable="true" role="textbox" aria-label="Multi-paragraph editor"><p>One sentence are here.</p><p>And another are here.</p></div>
+<label for="single">A single-line input</label><input id="single" value="Before i has a idea after.">
+<h2>Read-only text</h2><p id="readonly">This text lives on the page. Select it to preview an edit, then copy the result wherever you need it.</p>
+<label for="locked">A read-only field</label><textarea id="locked" readonly>This text can be copied but not replaced.</textarea>
+<label for="password">Password fields are excluded</label><input id="password" type="password" value="example-only-not-a-real-secret" autocomplete="off">
+<h2>Same-origin iframe</h2><iframe title="Embedded editor" srcdoc="<!doctype html><html><body><textarea id='framed'>we was in a frame.</textarea></body></html>"></iframe>
+</body></html>

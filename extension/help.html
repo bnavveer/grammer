@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Grammer — How to use</title><link rel="stylesheet" href="ui.css"><script type="module" src="help.js"></script></head>
+<body><div class="options document">
+  <header class="topbar"><div class="brand"><img src="icons/mark.svg" alt="">Grammer</div><a href="options.html">Settings</a></header>
+  <main class="workspace">
+    <h1>Small edits, one shortcut away.</h1>
+    <p>Select text on a webpage or inside an editor. Press a shortcut, choose an action from Grammer's toolbar, or right-click the selection.</p>
+    <h2>Your two actions</h2>
+    <p><strong>Fix grammar</strong> <kbd data-command="fix-grammar">Alt ⇧ G</kbd> sends only your selection to Gemini. Review the result, make any changes in the preview, then replace the selection or copy it.</p>
+    <p><strong>Remove formatting</strong> <kbd data-command="plain-text">Alt ⇧ P</kbd> prepares plain text locally. Replacing it strips inline fonts, colors, bold, highlighting, and links. The editor's own default styles still apply. Literal Markdown symbols stay as written.</p>
+    <p>Both actions return plain text. A read-only selection offers copying. Close the preview or press Escape while it is focused to cancel a pending request.</p>
+    <h2>Change your hotkeys</h2>
+    <p>Click the button below to open Chrome's shortcut editor. Find Grammer, click the pencil next to either action, and press the keys you want. Chrome saves them automatically. Return to Grammer to see the new bindings.</p>
+    <button id="shortcuts">Change keyboard shortcuts</button>
+    <p>You can also open this editor from Settings or the popup. Chrome keeps your assignments when the extension reloads or you reset Grammer's settings. OS shortcuts and other extensions can take priority.</p>
+    <h2>Connect Gemini</h2>
+    <p>Get a <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Gemini API key from Google AI Studio</a>. Paste it in Settings, then click Save &amp; connect and allow Chrome to contact Gemini.</p>
+    <p>Grammer uses Gemini 3.5 Flash-Lite with minimal thinking for quick corrections. Test connection sends one example sentence; Google's API quotas and billing apply. No model or endpoint configuration is needed.</p>
+    <p>Keys are session-only unless you choose to remember them. A session-only key clears when Chrome restarts or the extension reloads, updates, or is disabled. Remembered keys are stored locally without encryption and never sync.</p>
+    <h2>If something doesn't work</h2>
+    <ul>
+      <li><strong>Nothing happens on a shortcut:</strong> check its assignment in Chrome's shortcut editor. Chrome must be focused.</li>
+      <li><strong>A ! badge appears:</strong> Chrome blocked the action. Open the toolbar and retry to see the explanation.</li>
+      <li><strong>The editor changed:</strong> copy the preview, or select your current text and run the action again. Grammer blocks replacement to protect newer edits.</li>
+      <li><strong>Replacement isn't supported:</strong> use Copy plain text and paste through the editor. Google Docs' canvas, custom document models, closed shadow roots, and cross-origin frames aren't guaranteed.</li>
+      <li><strong>A page is restricted:</strong> Chrome's internal pages, the Web Store, and its PDF viewer block extension access.</li>
+      <li><strong>A Gemini error appears:</strong> check your key, project quota, model access, and connection. Requests time out after 25 seconds; selections can contain up to 16,000 characters.</li>
+    </ul>
+    <p>Use your editor's Undo to revert a replacement. Rich-text cleanup can require more than one Undo step. Gemini can make mistakes or change meaning, so review its output before applying it.</p>
+    <h2 id="security">Privacy and reporting</h2>
+    <p>Grammer has no analytics, text history, or developer-operated backend. Grammar requests go straight to Google. Read the <a href="privacy.html">privacy policy</a> for details.</p>
+    <p>Report ordinary bugs in the <a href="https://github.com/bnavveer/grammer" target="_blank" rel="noopener noreferrer">source repository</a> using public sample text. For vulnerabilities, use private vulnerability reporting if enabled, or ask the maintainer for a private channel. Never post API keys or private documents.</p>
+  </main>
+  <footer class="page-footer"><span>Grammer · MIT licensed</span><a href="privacy.html">Privacy</a></footer>
+</div></body>
+</html>

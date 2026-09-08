@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Grammer</title><link rel="stylesheet" href="ui.css"><script type="module" src="popup.js"></script></head>
+<body class="popup">
+  <header class="popup-header"><div class="brand"><img src="icons/mark.svg" alt="">Grammer</div><span class="version">0.2.0</span></header>
+  <main>
+    <h1>Good words. Less fuss.</h1>
+    <p class="intro">Select text on a page, then choose an action.</p>
+    <div class="action-list">
+      <button class="action-row" data-action="fix-grammar">
+        <span class="action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m3 16 5-12 5 12M5 12h6M14 17l3 3 5-7"/></svg></span>
+        <span class="action-text"><strong>Fix grammar</strong><small>A light edit. Still your voice.</small></span><kbd class="shortcut" data-command="fix-grammar">Alt ⇧ G</kbd>
+      </button>
+      <button class="action-row" data-action="plain-text">
+        <span class="action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16M12 5v14M8 19h8M3 21 21 3"/></svg></span>
+        <span class="action-text"><strong>Remove formatting</strong><small>Just text. Works offline.</small></span><kbd class="shortcut" data-command="plain-text">Alt ⇧ P</kbd>
+      </button>
+    </div>
+    <div class="connection" id="connection"><span class="dot"></span><span id="connection-label">Checking your settings…</span></div>
+    <p id="notice" class="status" role="status" hidden></p>
+  </main>
+  <footer><button class="quiet-button" id="shortcuts">Change shortcuts</button><button class="quiet-button" id="settings">Settings</button></footer>
+</body>
+</html>
